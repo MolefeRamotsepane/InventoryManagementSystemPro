@@ -51,8 +51,9 @@ This project taught me how to:
 4. Run the application in terminal or using Ctrl + F5
 
 ## 👨‍💻 Author
-Molefe Ramotsepane
-GitHub Profile
+
+**Molefe Ramotsepane**  
+[GitHub Profile](https://github.com/MolefeRamotsepane)  
 Aspiring Software Engineer and Web Developer
 
 ## 📜 License
