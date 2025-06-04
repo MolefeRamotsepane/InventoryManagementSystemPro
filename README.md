@@ -23,10 +23,25 @@ A simple, educational Inventory Management System built in C# as a console appli
 - Committed code in meaningful steps to show real development progress
 - Wrote documentation (this README)
 
+## 🛠️ Technologies Used
+
+- Language: C#
+- IDE: Visual Studio / Visual Studio Code
+- .NET: .NET Framework 8 / .NET Core Console App
+- Git & GitHub for version control
+
 ## 🧱 Challenges Encountered
 
 - **File Permission Issues:** Some `.vs` files caused permission errors when pushing to GitHub; resolved by properly setting `.gitignore`
 - **Constructor Errors (CS7036):** Missed required constructor parameters during class instantiation
+
+## Learnings & Growth
+This project taught me how to:
+- Write modular and maintainable C# code
+- Use object-oriented programming practically
+-- Implement basic file-based data persistence
+-- Use Git & GitHub professionally
+-- Debug and refactor with purpose
 
 ## ▶️ How to Run
 
@@ -34,4 +49,12 @@ A simple, educational Inventory Management System built in C# as a console appli
 2. Open in Visual Studio or VS Code
 3. Build the project
 4. Run the application in terminal or using Ctrl + F5
+
+## 👨‍💻 Author
+Molefe Ramotsepane
+GitHub Profile
+Aspiring Software Engineer and Web Developer
+
+## 📜 License
+MIT License
 
