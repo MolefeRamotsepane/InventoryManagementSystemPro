@@ -4,27 +4,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 // Define a namespace for the Inventory Management System's services
 namespace InventoryManagementSystemPro.Services
 {
+
+   
     // Define a public class for managing inventory items
     public class InventoryService
     {
         // Initialize an empty list to store inventory items
-        private List<Item> items = new();
-
+        private List<Item> items = new List<Item>();
         // Initialize a counter to assign unique IDs to items
-        private int IdCounter = 1;
+        private int IdCounter;
+        private readonly string filePath = "inventory.json"; // Path to the JSON file
+
+        public InventoryService()
+        {
+            items = LoadItems(); // Load the existing items from the inventory file into the 'items' list
+            // If the list is not empty, find the maximum ID of the existing items and increment it by 1,
+            // If the list is empty, set the 'IdCounter' to 1 (since there are no existing IDs to increment)
+            IdCounter = items.Any() ? items.Max(i => i.Id) + 1 : 1; // Its the shorter version of an if statement
+        }
 
         // Define a method to add a new item to the inventory
         public void AddItem(string name, int quantity)
         {
             // Create a new item with the given name, quantity, and a unique ID
-            var item = new Item(IdCounter++, name, quantity);
+            var item = new Item(IdCounter++, name, quantity );
 
             // Add the new item to the inventory list
             items.Add(item);
+            SaveItems();
 
             // Print a success message to the console
             Console.ForegroundColor = ConsoleColor.Green;
@@ -81,6 +93,7 @@ namespace InventoryManagementSystemPro.Services
             {
                 // If found, update the item's quantity
                 item.Quantity = newQuantity;
+                SaveItems(); // Save the updated inventory
 
                 // Print a success message to the console
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -113,6 +126,7 @@ namespace InventoryManagementSystemPro.Services
             {
                 // If found, remove the item from the inventory
                 items.Remove(item);
+                SaveItems(); // Save the updated inventory
 
                 // Print a success message to the console
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -171,6 +185,34 @@ namespace InventoryManagementSystemPro.Services
                 Console.WriteLine("\nPress any key to continue...\n");
                 Console.ReadKey();
             }
+        }
+
+        // Define a method to save the current list of items to a file
+        private void SaveItems() 
+        {
+            // Serialize the list of items into a JSON string
+            var json = JsonSerializer.Serialize(items);
+
+            // Write the JSON string to the file specified by the filePath variable
+            File.WriteAllText(filePath, json);
+        }
+
+        // Define a method to load a list of items from a file
+        private List<Item> LoadItems()
+        {
+            // Check if the file specified by the filePath variable exists
+            if (File.Exists(filePath))
+            {
+                // Read the contents of the file into a string
+                var json = File.ReadAllText(filePath);
+
+                // Deserialize the JSON string into a list of Item objects
+                // If deserialization fails, return an empty list
+                return JsonSerializer.Deserialize<List<Item>>(json) ?? new List<Item>();
+            }
+
+            // If the file does not exist, return an empty list
+            return new List<Item>();
         }
     }
 }
