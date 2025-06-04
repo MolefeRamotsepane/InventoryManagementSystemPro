@@ -22,6 +22,7 @@ namespace InventoryManagementSystemPro
             while (running) { 
 
                 Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Clear();
                 Console.WriteLine("-----------------------------------------");
                 Console.WriteLine("Inventory Management System");
                 Console.WriteLine("-----------------------------------------\n");
@@ -34,6 +35,7 @@ namespace InventoryManagementSystemPro
                 Console.WriteLine("6. Exit");
                 Console.WriteLine("-----------------------------------------\n");
                 Console.WriteLine("\nChoose an option (1-6): \n");
+                
 
                 string input = Console.ReadLine();
 
@@ -41,6 +43,10 @@ namespace InventoryManagementSystemPro
                 switch (input)
                 {
                     case "1":
+                        Console.Clear();
+                        Console.WriteLine("-----------------------------------------");
+                        Console.WriteLine("Enter details:");
+                        Console.WriteLine("-----------------------------------------\n");
                         Console.Write("Enter item name: ");
                         string name = Console.ReadLine();
                         Console.Write("Enter item quantity: ");
@@ -51,6 +57,10 @@ namespace InventoryManagementSystemPro
                         service.ListItems();
                         break;
                     case "3":
+                        Console.Clear();
+                        Console.WriteLine("-----------------------------------------");
+                        Console.WriteLine("Enter details:");
+                        Console.WriteLine("-----------------------------------------\n");
                         Console.Write("Enter item ID: ");
                         int updatedId = int.Parse(Console.ReadLine());
                         Console.Write("Enter new quantity: ");
@@ -58,11 +68,19 @@ namespace InventoryManagementSystemPro
                         service.UpdateQuantity(updatedId, newQty);
                         break;
                     case "4":
+                        Console.Clear();
+                        Console.WriteLine("-----------------------------------------");
+                        Console.WriteLine("Enter details:");
+                        Console.WriteLine("-----------------------------------------\n");
                         Console.Write("Enter item to delete ID: ");
                         int deletedId = int.Parse(Console.ReadLine());
                         service.DeleteItem(deletedId);
                         break;
                     case "5":
+                        Console.Clear();
+                        Console.WriteLine("-----------------------------------------");
+                        Console.WriteLine("Enter details:");
+                        Console.WriteLine("-----------------------------------------\n");
                         Console.Write("Enter keyword to seacrh: ");
                         string keyword = Console.ReadLine();
                         service.SearchItem(keyword);
@@ -73,6 +91,7 @@ namespace InventoryManagementSystemPro
 
 
                     default:
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Invalid option. Please try again.");
                         break;
                 }

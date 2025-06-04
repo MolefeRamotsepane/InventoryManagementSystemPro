@@ -46,6 +46,7 @@ namespace InventoryManagementSystemPro.Services
             else
             {
                 // If not empty, print a header and list all items
+                Console.Clear();
                 Console.WriteLine("-----------------------------------------");
                 Console.WriteLine("Inventory List");
                 Console.WriteLine("-----------------------------------------\n");
@@ -109,6 +110,7 @@ namespace InventoryManagementSystemPro.Services
         }
 
         // Define a method to search for items by keyword
+        
         public void SearchItem(string keyword)
         {
             // Use LINQ to find items whose names contain the keyword (case-insensitive)
@@ -125,6 +127,7 @@ namespace InventoryManagementSystemPro.Services
             else
             {
                 // If found, print a header and list the search results
+                Console.Clear();
                 Console.WriteLine("-----------------------------------------");
                 Console.WriteLine("Search Results");
                 Console.WriteLine("-----------------------------------------\n");
