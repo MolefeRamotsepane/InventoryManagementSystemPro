@@ -35,10 +35,8 @@ namespace InventoryManagementSystemPro
                 Console.WriteLine("6. Exit");
                 Console.WriteLine("-----------------------------------------\n");
                 Console.WriteLine("\nChoose an option (1-6): \n");
-                
 
                 string input = Console.ReadLine();
-
 
                 switch (input)
                 {
@@ -92,7 +90,7 @@ namespace InventoryManagementSystemPro
 
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Invalid option. Please try again.");
+                        Console.WriteLine("\nInvalid option. Please try again.\n");
                         break;
                 }
 

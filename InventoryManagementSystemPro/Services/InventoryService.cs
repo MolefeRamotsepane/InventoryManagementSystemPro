@@ -30,6 +30,9 @@ namespace InventoryManagementSystemPro.Services
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\nItem added successfully!\n");
             Console.ResetColor();
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
         }
 
         // Define a method to list all items in the inventory
@@ -39,8 +42,15 @@ namespace InventoryManagementSystemPro.Services
             if (items.Count == 0)
             {
                 // If empty, print a message to the console
+                Console.Clear();
+                Console.WriteLine("-----------------------------------------");
+                Console.WriteLine("Inventory List");
+                Console.WriteLine("-----------------------------------------\n");
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\nNo items found.\n");
+                Console.WriteLine("No items found.\n");
+
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
                 return;
             }
             else
@@ -54,6 +64,9 @@ namespace InventoryManagementSystemPro.Services
                 // Iterate over each item in the inventory and print its details
                 foreach (var item in items)
                     Console.WriteLine(item);
+
+                Console.WriteLine("\nPress any key to continue...\n");
+                Console.ReadKey();
             }
         }
 
@@ -73,6 +86,9 @@ namespace InventoryManagementSystemPro.Services
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\nItem quantity updated successfully!\n");
                 Console.ResetColor();
+
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
             }
             else
             {
@@ -80,6 +96,9 @@ namespace InventoryManagementSystemPro.Services
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\nItem not found.\n");
                 Console.ResetColor();
+
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
             }
         }
 
@@ -99,6 +118,9 @@ namespace InventoryManagementSystemPro.Services
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\nItem deleted successfully!\n");
                 Console.ResetColor();
+
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
             }
             else
             {
@@ -106,6 +128,9 @@ namespace InventoryManagementSystemPro.Services
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\nItem not found.\n");
                 Console.ResetColor();
+
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
             }
         }
 
@@ -120,9 +145,16 @@ namespace InventoryManagementSystemPro.Services
             if (SearchResults.Count == 0)
             {
                 // If not found, print an error message to the console
+                Console.Clear();
+                Console.WriteLine("-----------------------------------------");
+                Console.WriteLine("Search Results");
+                Console.WriteLine("-----------------------------------------\n");
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\nNo items found.\n");
+                Console.WriteLine("No items found.\n");
                 Console.ResetColor();
+
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
             }
             else
             {
@@ -135,6 +167,9 @@ namespace InventoryManagementSystemPro.Services
                 // Iterate over each search result and print its details
                 foreach (var item in SearchResults)
                     Console.WriteLine(item);
+
+                Console.WriteLine("\nPress any key to continue...\n");
+                Console.ReadKey();
             }
         }
     }
