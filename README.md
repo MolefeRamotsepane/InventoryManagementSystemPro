@@ -5,17 +5,17 @@ A simple, educational Inventory Management System built in C# as a console appli
 ## 🚧 Development Phases
 
 ### Phase 1: Basic CRUD Functionality
-- Created core classes (`Item`, `InventoryManager`)
+- Created core classes (`Item`, `InventoryService`)
 - Implemented adding, listing, updating, and deleting inventory items
 - Built a basic menu system using console UI
 
 ### Phase 2: Improving Structure
-- Separated concerns using multiple files (`Item.cs`, `InventoryManager.cs`, `Program.cs`)
+- Separated concerns using multiple files (`Item.cs`, `InventoryService.cs`, `Program.cs`)
 - Used lists and loops for inventory tracking
 - Introduced better naming conventions and error handling
 
 ### Phase 3: Persistence
-- Added file persistence using `System.IO`
+- Added file persistence using `System.Text.Json`
 - Inventory is saved and loaded from a text file
 
 ### Phase 4: Preparing for GitHub
@@ -45,7 +45,7 @@ This project taught me how to:
 
 ## ▶️ How to Run
 
-1. Clone the repository: git clone https://github.com/yourusername/inventory-management-system.git
+1. Clone the repository: git clone https://github.com/MolefeRamotsepane/InventoryManagementSystem.git
 2. Open in Visual Studio or VS Code
 3. Build the project
 4. Run the application in terminal or using Ctrl + F5
